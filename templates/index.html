@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Alejandro Murillo Anguas - Fotografía y Dirección de Arte. Transformo tu visión en obras visuales de alto impacto en Cáceres.">
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="{{ data.name }} | {{ data.brand }}">
+    <meta property="og:description"
+        content="Capturando momentos, creando alto valor visual. Portafolio de Fotografía y Producción de Video.">
+    <meta property="og:image" content="/static/images/hero_bg.jpg">
+    <meta property="og:type" content="website">
+
+    <title>{{ data.name }} | {{ data.brand }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!-- Rotating Badge -->
+    <div class="floating-badge">
+        <svg viewBox="0 0 100 100" width="120" height="120">
+            <defs>
+                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+            </defs>
+            <text>
+                <textPath xlink:href="#circlePath" class="badge-text">
+                    CÁCERES ✦ ESTUDIO CREATIVO ✦ ESTILO PREMIUM ✦
+                </textPath>
+            </text>
+        </svg>
+        <div class="badge-center">AV</div>
+    </div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-text">ANGVISUAL</div>
+    </div>
+    <nav>
+        <div class="logo">ANG<span>VISUAL</span></div>
+        <div class="menu-toggle" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="nav-menu">
+            <a href="#portfolio">PORTAFOLIO</a>
+            <a href="#videos">VIDEOS</a>
+            <a href="#about">PRESENTACIÓN</a>
+            <a href="#contact">CONTACTO</a>
+            <label class="theme-switch" aria-label="Toggle Theme">
+                <input type="checkbox" id="theme-checkbox">
+                <div class="switch-track">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <div class="switch-thumb"></div>
+                </div>
+            </label>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero-section">
+        <!-- Imagen de fondo que el usuario quiere de primera -->
+        <div class="hero-bg-image"></div>
+
+        <!-- Unicorn Studio superpuesto (opcional, para darle efectos de partículas o brillos) -->
+        <div class="unicorn-wrapper"
+            style="position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.6;">
+            <!-- Puedes añadir un efecto transparente aquí si lo deseas -->
+            <div data-us-project="TU_PROJECT_ID_AQUI" style="width: 100%; height: 100%;"></div>
+        </div>
+
+        <div class="hero-content" id="hero-content" style="position: relative; z-index: 2;">
+            <div class="hero-text-wrapper">
+                <p class="hero-subtitle">ALEJANDRO MURILLO ANGUAS</p>
+                <h1 class="hero-title">CREATING<br>VISUALS.</h1>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>FOTOGRAFÍA Y VIDEO</span> <span>✦</span>
+            <span>PRODUCCIÓN VISUAL</span> <span>✦</span>
+            <span>DISEÑO PREMIUM</span> <span>✦</span>
+            <span>FOTOGRAFÍA Y VIDEO</span> <span>✦</span>
+            <span>PRODUCCIÓN VISUAL</span> <span>✦</span>
+            <span>DISEÑO PREMIUM</span> <span>✦</span>
+            <span>FOTOGRAFÍA Y VIDEO</span> <span>✦</span>
+            <span>PRODUCCIÓN VISUAL</span> <span>✦</span>
+            <span>DISEÑO PREMIUM</span> <span>✦</span>
+        </div>
+    </div>
+
+    <main>
+        <section id="portfolio" class="bento-section">
+            <h2 class="section-title">PROYECTOS</h2>
+
+            <!-- Filtros de Portafolio -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">TODOS</button>
+                <button class="filter-btn" data-filter="deporte">DEPORTE</button>
+                <button class="filter-btn" data-filter="sesiones">SESIONES</button>
+                <button class="filter-btn" data-filter="eventos">EVENTOS</button>
+                <button class="filter-btn" data-filter="empresas">EMPRESAS</button>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Foto Deporte Large (Ocupará izquierda) -->
+                <div class="bento-item large gallery-trigger filter-item deporte" data-category="deporte"
+                    style="cursor: pointer;">
+                    <img src="/static/deporte/IMG_9691.jpg" alt="Deporte">
+                    <div class="bento-content">
+                        <p>ESPECIALIDAD</p>
+                        <h3>FOTOGRAFÍA<br>DE DEPORTE</h3>
+                        <span class="view-gallery-btn">VER GALERÍA &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Foto Sesiones (Ocupará 1 bloque arriba derecha) -->
+                <div class="bento-item gallery-trigger filter-item sesiones" data-category="sesiones"
+                    style="cursor: pointer;">
+                    <img src="/static/sesiones/IMG_8386-2.jpg" alt="Sesiones">
+                    <div class="bento-content">
+                        <p>PERSONAL</p>
+                        <h3>SESIONES</h3>
+                        <span class="view-gallery-btn">VER GALERÍA &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Foto Eventos (Ocupará 1 bloque arriba derecha al lado de sesiones) -->
+                <div class="bento-item gallery-trigger filter-item eventos" data-category="eventos"
+                    style="cursor: pointer;">
+                    <img src="/static/eventos/port.jpg" alt="Eventos">
+                    <div class="bento-content">
+                        <p>COBERTURA</p>
+                        <h3>EVENTOS</h3>
+                        <span class="view-gallery-btn">VER GALERÍA &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Empresas Wide (Ocupará bajo sesiones y eventos, lado derecho) -->
+                <div class="bento-item wide gallery-trigger filter-item empresas" data-category="empresas"
+                    style="cursor: pointer;">
+                    <img src="/static/empresas/1J7A7467-2.jpg" alt="Empresas">
+                    <div class="bento-content">
+                        <p>B2B Y MARCAS</p>
+                        <h3>EMPRESAS Y<br>CORPORATIVO</h3>
+                        <span class="view-gallery-btn">VER GALERÍA &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de llamada a la acción rápida (Bento) -->
+                <div class="bento-item wide cta-bento-small reveal">
+                    <div class="bento-content">
+                        <p>¿TIENES UN PROYECTO?</p>
+                        <h3>EMPECEMOS</h3>
+                        <button id="open-contact-modal" class="cta-button-premium">
+                            <span>SOLICITAR PRESUPUESTO</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva Sección: POWER ABOUT (Marca Personal) -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-visual reveal">
+                    <div class="about-img-wrapper">
+                        <img src="/static/images/profile.jpg" alt="Alejandro Murillo">
+                        <div class="about-img-overlay"></div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="exp-number">20</span>
+                        <span class="exp-text">AÑOS<br>DE EDAD</span>
+                    </div>
+                </div>
+                <div class="about-text-content reveal">
+                    <p class="about-pre">PORTFOLIO PROFESIONAL</p>
+                    <h2 class="about-main-title">DETRÁS DE<br>LA CÁMARA</h2>
+                    <div class="about-description">
+                        <p>Soy <strong>Alejandro Murillo</strong>, fotógrafo y filmmaker con base en Cáceres. Mi enfoque
+                            no es solo capturar una imagen, sino construir una narrativa visual que eleve el valor de
+                            cada marca y proyecto.</p>
+                        <p>A mis 20 años, he desarrollado una visión que combina la frescura de las nuevas tendencias
+                            con una ejecución técnica rigurosa, especializada en deporte, eventos y dirección de arte.
+                        </p>
+                    </div>
+                    <div class="about-signature">
+                        <span class="sig-text">Alejandro Murillo</span>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">+50</span>
+                            <span class="stat-label">PROYECTOS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">COMPROMISO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        </section>
+
+        <section id="videos" class="video-section">
+            <h2 class="section-title">LO ÚLTIMO EN VIDEO</h2>
+            <div class="video-grid">
+                {% for video in data.videos %}
+                <div class="video-card">
+                    <video class="portfolio-video" src="{{ video.url }}" loop muted playsinline
+                        preload="metadata"></video>
+                    <div class="video-overlay">
+                        {{ video.title }}
+                    </div>
+                    <div class="play-icon">▶</div>
+                </div>
+                {% else %}
+                <p>No hay videos disponibles todavía.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <!-- Gallery Lightbox -->
+    <div id="gallery-lightbox" class="lightbox">
+        <div class="lightbox-header">
+            <span class="lightbox-title">GALERÍA</span>
+            <span class="close-lightbox">&times;</span>
+        </div>
+        <div class="lightbox-content" data-lenis-prevent>
+            <div id="gallery-loader"
+                style="display: none; color: var(--accent); font-weight: 700; text-align: center; margin-top: 50px;">
+                CARGANDO...</div>
+            <div id="gallery-grid" class="gallery-grid"></div>
+        </div>
+    </div>
+
+    <!-- Video Lightbox -->
+    <div id="video-lightbox" class="lightbox">
+        <div class="lightbox-header">
+            <span class="lightbox-title">REPRODUCTOR</span>
+            <span id="close-video-btn" class="close-video-lightbox close-lightbox">&times;</span>
+        </div>
+        <div class="lightbox-content"
+            style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+            <video id="lightbox-video-player" controls autoplay playsinline
+                style="max-height: 85vh; max-width: 100%; aspect-ratio: 9/16; background: black; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.8);"></video>
+        </div>
+    </div>
+
+    <!-- Sección BTS (Behind The Scenes) -->
+    <section class="bts-section">
+        <div class="marquee-container marquee-container-dark">
+            <div class="marquee-content">
+                <span>BEHIND THE SCENES</span> <span>✦</span>
+                <span>EL PROCESO REAL</span> <span>✦</span>
+                <span>EN EL RODAJE</span> <span>✦</span>
+                <!-- Loop -->
+                <span>BEHIND THE SCENES</span> <span>✦</span>
+                <span>EL PROCESO REAL</span> <span>✦</span>
+                <span>EN EL RODAJE</span> <span>✦</span>
+            </div>
+        </div>
+        <div class="bts-cinematic-wrapper reveal">
+            <img src="/static/images/hero_bg.jpg" alt="Detrás de las cámaras">
+            <div class="bts-overlay">
+                <p>EL ARTE DETRÁS DE CADA DISPARO</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Propuestas y Testimoniales Rediseñada -->
+    <section class="proposals-testimonials">
+        <div class="proposals-container">
+            <h2 class="section-title">NUEVOS ENFOQUES</h2>
+            <div class="proposals-grid">
+                <div class="proposal-card reveal" data-image="/static/images/sports.jpg">
+                    <div class="proposal-number">01</div>
+                    <h3>STORYTELLING VISUAL</h3>
+                    <p>No solo tomamos fotos, contamos la historia de tu marca a través de narrativas cinematográficas
+                        de alto impacto.</p>
+                    <div class="proposal-reveal-img"><img src="/static/images/sports.jpg" alt="Storytelling"></div>
+                </div>
+                <div class="proposal-card reveal" data-image="/static/images/events.jpg">
+                    <div class="proposal-number">02</div>
+                    <h3>DIRECCIÓN DE ARTE 360º</h3>
+                    <p>Conceptualización completa de campañas, desde el moodboard hasta la post-producción final
+                        profesional.</p>
+                    <div class="proposal-reveal-img"><img src="/static/images/events.jpg" alt="Art Direction"></div>
+                </div>
+                <div class="proposal-card reveal" data-image="/static/images/hero_bg.jpg">
+                    <div class="proposal-number">03</div>
+                    <h3>CONTENIDO PARA RRSS</h3>
+                    <p>Optimización visual específica para plataformas sociales, garantizando el máximo engagement y
+                        estética premium.</p>
+                    <div class="proposal-reveal-img"><img src="/static/images/hero_bg.jpg" alt="Social Media"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-wrapper">
+            <h2 class="section-title center-text">OPINIONES</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-premium reveal">
+                    <div class="quote-icon">"</div>
+                    <p>Un trabajo impecable, Alejandro captó exactamente la esencia de mi marca.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>MARCOS R.</strong>
+                            <span>CEO de Marca Deportiva</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-premium reveal">
+                    <div class="quote-icon">"</div>
+                    <p>Las fotos de la sesión deportiva son de otro nivel profesional.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>LUCÍA P.</strong>
+                            <span>Atleta Profesional</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-premium reveal">
+                    <div class="quote-icon">"</div>
+                    <p>Rápido, creativo y con un ojo artístico espectacular.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <strong>EVENTOS CÁCERES</strong>
+                            <span>Agencia de Eventos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="section-title">DUDAS FRECUENTES</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto tiempo tardas en entregar las fotos? <span>+</span></div>
+                <div class="faq-answer">Suelo entregar una selección previa en 48h y el pack completo editado en un
+                    máximo de 7 a 10 días laborables.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Te desplazas fuera de Cáceres? <span>+</span></div>
+                <div class="faq-answer">¡Totalmente! Me encanta viajar para proyectos, tanto nacionales como
+                    internacionales. Los gastos de envío se presupuestan aparte.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Entregas los archivos brutos (RAW)? <span>+</span></div>
+                <div class="faq-answer">Por política de calidad, solo entrego el material final editado y procesado, que
+                    es el reflejo real de mi estilo y estándar profesional.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal Form -->
+    <div id="contact-modal" class="contact-modal-overlay">
+        <div class="contact-modal-box">
+            <button class="close-modal-btn" id="close-contact-modal">&times;</button>
+            <h3>Hablemos</h3>
+            <p>Déjame tus datos y cuéntame qué tienes en mente. Te responderé en menos de 24 horas.</p>
+            <form action="https://formsubmit.co/alejandro.angfotografia@gmail.com" method="POST" id="contactForm">
+                <div class="form-group">
+                    <label>NOMBRE COMPLETO</label>
+                    <input type="text" name="nombre" placeholder="Ej. Lando Norris" required>
+                </div>
+                <div class="form-group">
+                    <label>TIPO DE PROYECTO</label>
+                    <select name="proyecto" required>
+                        <option value="sesion">Sesión Personal</option>
+                        <option value="evento">Evento</option>
+                        <option value="empresa">Corporativo / Empresa</option>
+                        <option value="deporte">Fotografía Deportiva</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>MENSAJE</label>
+                    <textarea name="mensaje" placeholder="Cuéntame los detalles..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn-text">ENVIAR MENSAJE</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/34722180215?text=Hola%20Alejandro,%20he%20visto%20tu%20web%20y%20me%20gustaría%20pedirte%20un%20presupuesto."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-4.821 4.754a8.117 8.117 0 0 1-4.077-1.1l-.293-.174-3.04.798.812-2.964-.191-.305a8.114 8.114 0 0 1-1.251-4.321c0-4.48 3.645-8.125 8.125-8.125 2.17 0 4.21.844 5.744 2.379a8.077 8.077 0 0 1 2.379 5.746c0 4.481-3.645 8.126-8.125 8.126m0-16.25C7.305 2.886 3.125 7.066 3.125 12.113c0 1.611.42 3.185 1.218 4.577L3 21.054l4.512-1.183a8.956 8.956 0 0 0 4.375 1.135c5.385 0 9.766-4.382 9.766-9.767 0-2.585-1.006-5.016-2.834-6.843A9.68 9.68 0 0 0 12.113 2.886z" />
+        </svg>
+    </a>
+
+    <footer>
+        <div class="footer-aesthetic">
+            <div class="footer-top">
+                <h2>ANGVISUAL</h2>
+                <p>Capturando momentos, creando alto valor visual.<br>Fotografía y dirección de arte en Cáceres, España.
+                </p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom-wrapper">
+                <div class="footer-links">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">LINKEDIN</a>
+                    <a href="mailto:alejandro.angfotografia@gmail.com">EMAIL</a>
+                </div>
+                <div class="footer-copy">
+                    &copy; 2024 {{ data.name }}. TODOS LOS DERECHOS RESERVADOS.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Unicorn Studio Script -->
+    <script type="module" src="https://cdn.unicorn.studio/v1.3.2/unicornStudio.es.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.UnicornStudio) {
+                UnicornStudio.init().catch(err => console.log('Unicorn Studio no iniciado (falta ID)'));
+            }
+        });
+    </script>
+
+    <!-- Lenis Smooth Scroll Script -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
