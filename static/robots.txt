@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://angvisual-portfolio.onrender.com/sitemap.xml
